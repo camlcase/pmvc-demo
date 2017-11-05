@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">pMVC</h1>
+        <p class="lead">Welcome to the demo site made with pMVC and the
+            <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+            framework.</p>
+        <p><?php Html::actionLink('Read More', 'readmore', null, null,
+            array('class' => 'btn btn-primary btn-lg', 'role' => 'button')); ?></p>
+    </div>
+</div>
+
+<div class="container">
+    <p>
+        To find out how this demo is built, please look at the source code. I´ve
+        tried to comment the code as much as possible.
+    </p>
+    <p>
+        <em>This site running pMVC v<?php echo Application::VERSION; ?> 
+        on PHP version <?php echo phpversion(); ?>.</em>
+      </p>
+</div>

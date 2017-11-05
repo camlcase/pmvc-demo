@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Message sent!</h1>
+        <p class="lead">Thanx for your feedback.</p>
+    </div>
+</div>
+
+<div class="container">
+  <div class="alert alert-success" role="alert">
+    <p>
+      <strong>Your Email:</strong>
+      <?php echo $this->formData['email']; ?>
+    </p>
+    <p>
+      <strong>Your Message:</strong>
+      <?php echo $this->formData['message']; ?>
+    </p>
+  </div>
+    <p>
+        <?php Html::actionLink('Go back', 'contact', null, null, array('class' => 'btn btn-primary', 'role' => 'button')); ?>
+    </p>
+</div>

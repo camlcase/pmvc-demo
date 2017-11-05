@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">News</h1>
+        <p class="lead">This page using a Model that delivers some news from database.</p>
+    </div>
+</div>
+
+<div class="container">
+  <ul class="list-unstyled">
+    <?php foreach ($this->news as $news) : ?>
+    <li class="media">
+      <img class="mr-3" src="<?php echo $news['thumbnail']; ?>" alt="64x64" />
+      <div class="media-body">
+        <h5 class="mt-0 mb-1"><?php echo $news['title']; ?></h5>
+        <span class="badge"><?php echo $news['date']; ?></span>
+        <?php echo substr($news['content'], 0, 150). ' ...'; ?>
+        <p>
+          <?php Html::actionLink('Read more &raquo;', 'news', null, array($news['name'])); ?>
+        </p>
+      </div>
+    </li>
+    <?php endforeach; ?>
+  </ul>
+</div>

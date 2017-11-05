@@ -1,0 +1,33 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Get in contact</h1>
+        <p class="lead">Example of an contact form with server validation.</p>
+    </div>
+</div>
+
+<div class="container">
+    <?php
+    if (isset($this->errorMessage)) {
+        echo $this->errorMessage;
+    }
+    ?>
+
+    <form role="form" action="<?php Url::content('/contact/send'); ?>" method="post">
+        <div class="form-group">
+            <label for="frmEmail">Email address</label>
+            <input type="email" name="frmEmail" class="form-control form-control-lg" id="frmEmail" placeholder="Enter email" 
+                value="<?php echo $this->formData['frmEmail'] ?? ''; ?>" autocomplete="off" />
+        </div>
+        <div class="form-group">
+            <label for="frmMessage">Message</label>
+            <textarea id="frmMessage" name="frmMessage" class="form-control form-control-lg" rows="3" 
+                placeholder="Enter your message"><?php echo $this->formData['frmMessage'] ?? ''; ?></textarea>
+        </div>
+        <div class="form-group">
+            <label for="inputCaptcha">Human verification</label>
+            <input type="text" name="frmVerification" class="form-control form-control-lg" id="inputCaptcha" placeholder="1 + 3 = ?" 
+                value="<?php echo $this->formData['frmVerification'] ?? ''; ?>" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" name="btnSubmit">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Search</h1>
+        <p class="lead">A simple full-text search. Searching for news in database.</p>
+    </div>
+</div>
+
+<div class="container">
+    <?php if (isset($this->result) && $this->hits > 0) :?>
+    <ul class="list-unstyled">
+    <p>
+        <strong><?php echo $this->hits; ?></strong> hits on 
+        <strong><?php echo $this->searchTerm; ?></strong>
+    </p>
+    <?php foreach ($this->result as $news) : ?>
+    <li class="media">
+        <img class="mr-3" src="<?php echo $news['thumbnail']; ?>" alt="64x64" />
+        <div class="media-body">
+        <h5 class="mt-0 mb-1"><?php echo $news['title']; ?></h5>
+        <p>
+            <span class="badge"><?php echo $news['date']; ?></span>
+            <?php echo substr($news['content'], 0, 150). ' ...'; ?>
+        </p>
+        <p>
+            <?php Html::actionLink('Read more &raquo;', 'news', null, array($news['name'])); ?>
+        </p>
+        </div>
+    </li>
+    <?php endforeach; ?>
+    </ul>
+    <?php else : ?>
+    <p>Sorry, <strong>no</strong> hits on <strong><?php echo $this->searchTerm; ?></strong></p>
+    <?php endif; ?>
+</div>

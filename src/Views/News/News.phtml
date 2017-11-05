@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <div class="container">
+        <?php if ($this->news) : ?>
+        <h1 class="display-3"><?php echo $this->news['title']; ?></h1>
+        <p class="lead"><?php echo $this->news['date']; ?></p>
+        <?php else: ?>
+        <h1 class="display-3">Ops =(</h1>
+        <p class="lead">The news you´re looking for doesn´t exist.</p>
+        <?php endif; ?>
+    </div>
+</div>
+
+<div class="container">
+	<?php echo $this->news['content']; ?>
+    <p>
+        <a href="#" onclick="history.back(-1);">« Back</a>
+    </p>
+</div>
