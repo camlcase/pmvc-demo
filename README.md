@@ -1,2 +1,2 @@
 # pMVC Demo Site
-A demo site made using [pMVC](https://github.com/camlcase/pmvc "pMVC GitHub Repo") and [Bootstrap](https://getbootstrap.com "More of Bootstrap") library.
+A demo site made using [pMVC](https://github.com/camlcase/pmvc "pMVC GitHub Repo"), [MariaDB](https://mariadb.org "To MariaDB website") ([MySQL](https://www.mysql.com "To MySQL website") works as well) and the [Bootstrap](https://getbootstrap.com "To Bootstrap website") front-end component library.
